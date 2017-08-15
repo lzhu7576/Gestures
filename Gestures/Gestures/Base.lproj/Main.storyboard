@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wink.png" translatesAutoresizingMaskIntoConstraints="NO" id="XJA-I3-Hsw">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wink.png" translatesAutoresizingMaskIntoConstraints="NO" id="XJA-I3-Hsw">
                                 <rect key="frame" x="87" y="233.5" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XJA-I3-Hsw" secondAttribute="height" multiplier="1:1" id="05Q-bW-IU4"/>
@@ -31,18 +31,30 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="XJA-I3-Hsw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cNi-mk-waU"/>
                             <constraint firstItem="XJA-I3-Hsw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nQK-QC-UEd"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TbS-Ci-8z3" appends="YES" id="B5X-sQ-RwH"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="XJA-I3-Hsw" id="OiC-AS-39x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="TbS-Ci-8z3">
+                    <connections>
+                        <action selector="flipImage:" destination="BYZ-38-t0r" id="POM-5m-Gqr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>
-        <image name="wink.png" width="512" height="512"/>
+        <image name="wink.png" width="1024" height="1024"/>
     </resources>
 </document>
